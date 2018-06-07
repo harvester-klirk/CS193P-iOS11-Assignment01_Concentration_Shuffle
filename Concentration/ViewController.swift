@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
     // we need to specify how many cards we need
     lazy var game = Concentration(numberOfPairsOfCards: (cardButtons.count + 1) / 2)
     var flipCount:Int = 0{

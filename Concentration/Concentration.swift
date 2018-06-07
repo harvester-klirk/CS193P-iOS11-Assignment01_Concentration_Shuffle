@@ -11,16 +11,15 @@ import Foundation
 class Concentration{
     // MARK: Model
     
-    //
     var cards = [Card]()
     //we need to keep a track on a card faceUp so we can look for a match (for the third case of chooseCard())
     // and because when we start the game there will be no card faceUp so it's better be OPTIONAL
     var indexOfOneAndOnlyFaceUpCard : Int?
-//     sfter declaring cards we need to let the user choses a card
-//     the parameter can be of type card but it's better to call the card by its index
-//     since it's an array of cards, more flexible 
+    //     sfter declaring cards we need to let the user choses a card
+    //     the parameter can be of type card but it's better to call the card by its index
+    //     since it's an array of cards, more flexible
     func chooseCard(at index: Int){
-       // playing the concentration here
+        // playing the concentration here
         // ignoring the matched cards
         if !cards[index].isMatched{
             // case one: no card isFaceUp -> so we flip the card over to be faceUp that's all
@@ -51,6 +50,7 @@ class Concentration{
             }
         }
     }
+    
     // this init will let the controller specify how many cards to play
     // whatever the controller passes as numberOfPairsOfCards we will put them in var cards = [Cards]()
     init(numberOfPairsOfCards: Int) {
@@ -58,11 +58,10 @@ class Concentration{
             let card = Card(identifier: identifier)
             print("Identefier is ......\(identifier)")
             cards += [card,card]
-            
         }
         // TODO: Shuffle the cards
         for shuffle in cards.indices{
-        cards.swapAt(2, shuffle)
+            cards.swapAt(2, shuffle)
         }
     }
 }
