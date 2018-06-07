@@ -60,8 +60,10 @@ class Concentration{
             cards += [card,card]
         }
         // TODO: Shuffle the cards
+        
         for shuffle in cards.indices{
             cards.swapAt(2, shuffle)
+            
         }
     }
 }
