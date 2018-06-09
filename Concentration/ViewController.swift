@@ -9,6 +9,15 @@
 import UIKit
 
 class ViewController: UIViewController {
+    //***********************************************************
+    // important note: to restart the game from the begining
+    // all i did was adding a button on the storyboard ,segue to myself as "show" and no annimation
+    // then named the identifier that's it !, no need to hook the button here even
+    //***********************************************************
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        updateViewFromModel()
+    }
     
     // we need to specify how many cards we need
     lazy var game = Concentration(numberOfPairsOfCards: (cardButtons.count + 1) / 2)
